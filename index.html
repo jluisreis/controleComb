@@ -810,35 +810,35 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-logo">
-        <div class="logo-mark">⬡ Nobre Lar</div>
+        <div class="logo-mark">Nobre Lar</div>
         <div class="logo-sub">Monitoramento de Combustível</div>
       </div>
       <nav class="sidebar-nav">
         <div class="nav-section">Painel</div>
         <div class="nav-item active" onclick="showView('dashboard')">
-          <span class="nav-icon">◈</span> Dashboard
+          <span class="nav-icon">[D]</span> Dashboard
         </div>
         <div class="nav-item" onclick="showView('frota')">
-          <span class="nav-icon">⊟</span> Frota Geral
+          <span class="nav-icon">[F]</span> Frota Geral
         </div>
         <div class="nav-item" onclick="showView('comparativo')">
-          <span class="nav-icon">⇄</span> Comparativo
+          <span class="nav-icon">[C]</span> Comparativo
         </div>
         <div class="nav-section">Relatórios</div>
         <div class="nav-item" onclick="showView('semanas')">
-          <span class="nav-icon">↔</span> Semana a Semana
+          <span class="nav-icon">[S]</span> Semana a Semana
         </div>
         <div class="nav-item" onclick="showView('semanal')">
-          <span class="nav-icon">◷</span> Semanal
+          <span class="nav-icon">[M]</span> Semanal
         </div>
         <div class="nav-item" onclick="showView('alertas')">
-          <span class="nav-icon">⚠</span> Alertas <span id="alert-count"
+          <span class="nav-icon">[!]</span> Alertas <span id="alert-count"
             style="background:var(--red);color:white;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;">0</span>
         </div>
       </nav>
       <div class="sidebar-footer">
         <button class="import-btn" onclick="openModal()">
-          ↑ Importar CSV
+          + Importar CSV
         </button>
       </div>
     </aside>
@@ -850,14 +850,14 @@
         <div class="topbar-right">
           <div class="filter-group">
 
-            <!-- ── Multi-select de veículos ── -->
+            <!-- Multi-select de veículos -->
             <div id="veiculo-dropdown" style="position:relative">
               <button id="veiculo-btn" onclick="toggleVeiculoDropdown(event)"
                 style="background:var(--bg3);border:1px solid var(--border2);color:var(--text);
                        padding:7px 12px;border-radius:7px;font-family:var(--font-body);font-size:13px;
                        cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;min-width:160px">
                 <span id="veiculo-btn-label">Todos os veículos</span>
-                <span style="margin-left:auto;opacity:.5;font-size:10px">▼</span>
+                <span style="margin-left:auto;opacity:.5;font-size:10px">[v]</span>
               </button>
               <div id="veiculo-panel"
                 style="display:none;position:absolute;top:calc(100% + 4px);left:0;z-index:999;
@@ -878,9 +878,9 @@
             <select id="filter-tipo" onchange="applyFilters()">
               <option value="">Todos os tipos</option>
               <option value="MOTO">Motos</option>
-              <option value="CAMINHÃO P">Caminhão P</option>
-              <option value="CAMINHÃO P NOVO">Caminhão P Novo</option>
-              <option value="CAMINHÃO G">Caminhão G</option>
+              <option value="CAMINHAO P">Caminhão P</option>
+              <option value="CAMINHAO P NOVO">Caminhão P Novo</option>
+              <option value="CAMINHAO G">Caminhão G</option>
               <option value="CARRO">Carro</option>
             </select>
             <select id="filter-diasemana" onchange="applyFilters()">
@@ -895,14 +895,14 @@
             </select>
             <div
               style="display:flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border2);border-radius:7px;padding:5px 10px;flex-wrap:wrap;">
-              <span style="font-size:11px;color:var(--text3);white-space:nowrap">📅 De</span>
+              <span style="font-size:11px;color:var(--text3);white-space:nowrap">De</span>
               <input type="date" id="filter-data-ini" onchange="applyFilters()"
                 style="border:none;background:transparent;padding:2px 2px;font-size:12px;color:var(--text);width:126px;">
               <span style="font-size:11px;color:var(--text3)">até</span>
               <input type="date" id="filter-data-fim" onchange="applyFilters()"
                 style="border:none;background:transparent;padding:2px 2px;font-size:12px;color:var(--text);width:126px;">
               <button onclick="clearDateFilter()" title="Limpar período"
-                style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:13px;padding:0 2px;opacity:0.7">✕</button>
+                style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:13px;padding:0 2px;opacity:0.7">[x]</button>
             </div>
           </div>
           <div class="badge-live" id="status-live">Ao vivo</div>
@@ -917,22 +917,22 @@
           <div class="metrics-grid" id="metrics-grid">
             <div class="metric-card accent">
               <div class="metric-label">KM Total Rodados</div>
-              <div class="metric-value" id="m-km-total">—</div>
+              <div class="metric-value" id="m-km-total">-</div>
               <div class="metric-sub">Período selecionado</div>
             </div>
             <div class="metric-card green">
               <div class="metric-label">Custo Total (todos)</div>
-              <div class="metric-value" id="m-custo-total">—</div>
+              <div class="metric-value" id="m-custo-total">-</div>
               <div class="metric-sub">Todos os combustíveis</div>
             </div>
             <div class="metric-card blue">
               <div class="metric-label">Litros Consumidos</div>
-              <div class="metric-value" id="m-litros-total">—</div>
+              <div class="metric-value" id="m-litros-total">-</div>
               <div class="metric-sub">Total abastecido</div>
             </div>
             <div class="metric-card red">
               <div class="metric-label">Custo Médio/KM</div>
-              <div class="metric-value" id="m-custo-km">—</div>
+              <div class="metric-value" id="m-custo-km">-</div>
               <div class="metric-sub">Média geral da frota</div>
             </div>
           </div>
@@ -940,19 +940,19 @@
           <!-- Segunda linha: totais por tipo de combustível -->
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:22px" id="metrics-combustivel">
             <div class="metric-card" style="border-top:2px solid #6b9bef">
-              <div class="metric-label">⛽ Diesel S10 — Gasto Total</div>
-              <div class="metric-value" style="font-size:22px" id="m-custo-diesel">—</div>
-              <div class="metric-sub" id="m-litros-diesel">— L abastecidos</div>
+              <div class="metric-label"> Diesel S10 — Gasto Total</div>
+              <div class="metric-value" style="font-size:22px" id="m-custo-diesel">-</div>
+              <div class="metric-sub" id="m-litros-diesel">- L abastecidos</div>
             </div>
             <div class="metric-card" style="border-top:2px solid #f5a623">
-              <div class="metric-label">⛽ Gasolina Comum — Gasto Total</div>
-              <div class="metric-value" style="font-size:22px" id="m-custo-gasolina">—</div>
-              <div class="metric-sub" id="m-litros-gasolina">— L abastecidos</div>
+              <div class="metric-label"> Gasolina Comum — Gasto Total</div>
+              <div class="metric-value" style="font-size:22px" id="m-custo-gasolina">-</div>
+              <div class="metric-sub" id="m-litros-gasolina">- L abastecidos</div>
             </div>
             <div class="metric-card" style="border-top:2px solid #2dd4a0">
-              <div class="metric-label">💧 Outros — Gasto Total</div>
-              <div class="metric-value" style="font-size:22px" id="m-custo-outros">—</div>
-              <div class="metric-sub" id="m-litros-outros">— L abastecidos</div>
+              <div class="metric-label"> Outros — Gasto Total</div>
+              <div class="metric-value" style="font-size:22px" id="m-custo-outros">-</div>
+              <div class="metric-sub" id="m-litros-outros">- L abastecidos</div>
             </div>
           </div>
 
@@ -1086,7 +1086,7 @@
             <div style="background:var(--bg3);border-radius:10px;padding:16px;margin-bottom:16px">
               <div
                 style="font-size:10px;color:var(--text3);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">
-                📅 Período de comparação</div>
+                Período de comparação</div>
               <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
                 <div
                   style="display:flex;align-items:center;gap:8px;background:var(--bg2);border:1px solid var(--border2);border-radius:7px;padding:7px 12px;flex:1;min-width:280px;">
@@ -1097,7 +1097,7 @@
                   <input type="date" id="cmp-data-fim" onchange="renderComparativo()"
                     style="border:none;background:transparent;padding:2px 2px;font-size:13px;color:var(--text);flex:1;">
                   <button onclick="clearCmpDateFilter()" title="Limpar período"
-                    style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:13px;padding:0 2px;opacity:0.7">✕</button>
+                    style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:13px;padding:0 2px;opacity:0.7">[x]</button>
                 </div>
                 <div style="display:flex;gap:6px;flex-wrap:wrap">
                   <button onclick="setCmpPeriod(3)"
@@ -1154,7 +1154,7 @@
             </div>
           </div>
 
-          <div class="section-title">🚛 Caminhões</div>
+          <div class="section-title">Caminhões</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px">
             <div class="card">
               <div class="card-header">
@@ -1176,7 +1176,7 @@
             <div id="sw-caminhoes-detail"></div>
           </div>
 
-          <div class="section-title">🏍 Motos</div>
+          <div class="section-title">Motos</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px">
             <div class="card">
               <div class="card-header">
@@ -1196,7 +1196,7 @@
           <div class="card" style="margin-bottom:24px;overflow-x:auto;">
             <div class="card-header">
               <div class="card-title">Comparativo por Veículo — Seg a Sáb</div>
-              <span style="font-size:11px;color:var(--text3)">▲ melhorou &nbsp;▼ piorou</span>
+              <span style="font-size:11px;color:var(--text3)">[+] melhorou  [-] piorou</span>
             </div>
             <table class="vehicle-table" id="sw-table">
               <thead>
@@ -1265,10 +1265,10 @@
         <div class="status-item">
           <div class="status-dot" style="background:var(--green)"></div> Sistema Online
         </div>
-        <div class="status-item" id="status-records">— registros</div>
-        <div class="status-item" id="status-vehicles">— veículos</div>
-        <div class="status-item" id="status-period">—</div>
-        <div class="status-item" id="status-last-update">Última atualização: —</div>
+        <div class="status-item" id="status-records">- registros</div>
+        <div class="status-item" id="status-vehicles">- veículos</div>
+        <div class="status-item" id="status-period">-</div>
+        <div class="status-item" id="status-last-update">Última atualização: -</div>
       </div>
     </main>
   </div>
@@ -1282,7 +1282,7 @@
       <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()"
         ondragover="event.preventDefault();this.classList.add('drag')" ondragleave="this.classList.remove('drag')"
         ondrop="handleDrop(event)">
-        <div class="upload-icon">📂</div>
+        <div class="upload-icon">[P]</div>
         <div class="upload-text" id="upload-text">Clique ou arraste o arquivo CSV aqui</div>
         <div class="upload-hint">Formato: mesma estrutura da planilha base</div>
       </div>
@@ -1301,15 +1301,13 @@ let dadosAbastecimento = [];
 let dadosFiltrados = [];
 let charts = {}; // referência às instâncias Chart.js para destruir antes de recriar
 
-// ⚠️  Cole aqui a URL gerada no novo deploy do Apps Script
-// Deploy > New deployment > Web app > Anyone > Deploy > copiar URL
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyuX8XMyWaW-P6wC5fFE0UKmcXT8xFVt19Vsuape0zFcU0RwCFejnx8s_gbw4Kfpfs/exec";
 
 const CORES_TIPO = {
   "MOTO": "#5b8dee",
-  "CAMINHÃO P": "#f5a623",
-  "CAMINHÃO P NOVO": "#e8891a",
-  "CAMINHÃO G": "#f05454",
+  "CAMINHAO P": "#f5a623",
+  "CAMINHAO P NOVO": "#e8891a",
+  "CAMINHAO G": "#f05454",
   "CARRO": "#9b72ea"
 };
 
@@ -1336,7 +1334,7 @@ function parseDataQualquer(str) {
 
 function formatDataBR(str) {
   const dt = parseDataISO(str);
-  if (!dt) return str || "—";
+  if (!dt) return str || "-";
   return dt.toLocaleDateString("pt-BR");
 }
 
@@ -1384,7 +1382,6 @@ function tipoClasse(tipo) {
   return "carro";
 }
 // ===================== CARREGAMENTO DE DADOS =====================
-// ===================== CARREGAMENTO DE DADOS =====================
 async function carregarDadosDoGSheets() {
   setLiveStatus("loading");
 
@@ -1397,22 +1394,19 @@ async function carregarDadosDoGSheets() {
         cache: "no-store"
       });
     } catch (networkErr) {
-      // Sem conexão, CORS bloqueado ou URL inválida
       throw new Error("Sem conexão com o servidor. Verifique sua internet. (" + networkErr.message + ")");
     }
 
     if (!response.ok) {
-      throw new Error(`Servidor retornou HTTP ${response.status} (${response.statusText}). Verifique se a implantação do Apps Script está ativa.`);
+      throw new Error("Servidor retornou HTTP ${response.status} (${response.statusText}). Verifique se a implantação do Apps Script está ativa.");
     }
 
-    // Captura o texto bruto para diagnóstico antes de tentar parsear JSON
     const textoRaw = await response.text();
 
     let data;
     try {
       data = JSON.parse(textoRaw);
     } catch (parseErr) {
-      // Google retorna HTML quando a implantação expirou, requer login, ou há erro no script
       const snippet = textoRaw.slice(0, 120).replace(/</g, "&lt;");
       if (textoRaw.includes("signin") || textoRaw.includes("accounts.google")) {
         throw new Error("O Apps Script exigiu login. Reimplante o script como 'Qualquer pessoa, mesmo anônimos'.");
@@ -1431,8 +1425,6 @@ async function carregarDadosDoGSheets() {
     dadosFrota = Array.isArray(data.frota) ? data.frota : [];
     dadosAbastecimento = Array.isArray(data.abastecimentos) ? data.abastecimentos : [];
 
-    // Datas já chegam como "yyyy-MM-dd" do Apps Script — não precisa converter.
-    // Apenas garante que qualquer formato dd/mm/aaaa seja normalizado caso venha de outra fonte.
     dadosAbastecimento = dadosAbastecimento.map(d => ({
       ...d,
       data: d.data ? normalizarDataCsv(d.data) : null
@@ -1459,36 +1451,34 @@ function setLiveStatus(state, message) {
   const el = document.getElementById("status-live");
   if (!el) return;
 
-  // Remove retry button se existir
   const oldBtn = document.getElementById("btn-retry-sync");
   if (oldBtn) oldBtn.remove();
 
   switch (state) {
     case "loading":
-      el.innerHTML = "⟳ Sincronizando…";
+      el.innerHTML = "Sincronizando...";
       el.style.background = "rgba(91,141,238,0.15)";
       el.style.color = "var(--blue)";
       el.title = "";
       break;
     case "ok":
-      el.innerHTML = "● Ao vivo";
+      el.innerHTML = "Ao vivo";
       el.style.background = "rgba(45,212,160,0.15)";
       el.style.color = "var(--green)";
       el.title = "Dados sincronizados com sucesso";
       break;
     case "empty":
-      el.innerHTML = "⚠ Sem dados";
+      el.innerHTML = "Sem dados";
       el.style.background = "rgba(245,166,35,0.15)";
       el.style.color = "var(--accent)";
       el.title = "A planilha não retornou dados. Verifique se há registros na aba correta.";
       break;
     case "error": {
-      el.innerHTML = "✕ Erro de sincronização";
+      el.innerHTML = "Erro de sincronização";
       el.title = message || "Erro desconhecido";
       el.style.background = "rgba(240,84,84,0.15)";
       el.style.color = "var(--red)";
 
-      // Mostra banner de erro detalhado no dashboard
       const container = document.getElementById("alert-container");
       if (container) {
         container.innerHTML = `
@@ -1500,7 +1490,7 @@ function setLiveStatus(state, message) {
                 style="margin-left:auto;background:var(--accent);color:#0d0f14;border:none;
                        border-radius:6px;padding:5px 14px;font-size:12px;font-weight:600;
                        cursor:pointer;font-family:var(--font-body)">
-                ↺ Tentar novamente
+                Tentar novamente
               </button>
             </div>
             <div style="font-size:12px;color:var(--text2);background:var(--bg3);border-radius:6px;
@@ -1509,7 +1499,7 @@ function setLiveStatus(state, message) {
             </div>
             <div style="font-size:12px;color:var(--text3)">
               Causas comuns:
-              <b style="color:var(--text2)">1)</b> Implantação do Apps Script expirada — reimplante e atualize a URL no código.
+              <b style="color:var(--text2)">1)</b> Implantação do Apps Script expirada - reimplante e atualize a URL no código.
               <b style="color:var(--text2)">2)</b> Permissão "Qualquer pessoa" não ativada no Apps Script.
               <b style="color:var(--text2)">3)</b> Sem internet ou bloqueio de CORS.
             </div>
@@ -1547,7 +1537,7 @@ const VIEW_TITLES = {
   alertas: "Alertas"
 };
 
-let viewAtual = "dashboard"; // rastreia a aba visível para applyFilters() saber o que re-renderizar
+let viewAtual = "dashboard";
 
 function showView(viewName) {
   document.querySelectorAll('[id^="view-"]').forEach(el => el.style.display = "none");
@@ -1561,7 +1551,6 @@ function showView(viewName) {
   document.getElementById("view-title").textContent = VIEW_TITLES[viewName] || viewName;
   viewAtual = viewName;
 
-  // Renderiza sob demanda (evita recalcular tudo o tempo todo)
   if (viewName === "frota") renderFrota();
   if (viewName === "comparativo") renderComparativo();
   if (viewName === "semanas") renderSemanas();
@@ -1570,7 +1559,6 @@ function showView(viewName) {
 }
 
 // ===================== FILTROS =====================
-// ── Fechar dropdown ao clicar fora ──────────────────────────────────────
 document.addEventListener("click", function(e) {
   const panel = document.getElementById("veiculo-panel");
   const btn   = document.getElementById("veiculo-btn");
@@ -1586,20 +1574,17 @@ function toggleVeiculoDropdown(e) {
 }
 
 function toggleTodosVeiculos(checkbox) {
-  // Marcar/desmarcar todos os individuais
   document.querySelectorAll(".veiculo-cb").forEach(cb => { cb.checked = checkbox.checked; });
   atualizarBotaoVeiculo();
   applyFilters();
 }
 
 function onVeiculoCbChange() {
-  // Sincroniza o "Todos" conforme os individuais
   const cbs   = [...document.querySelectorAll(".veiculo-cb")];
   const todos = cbs.every(cb => cb.checked);
   const nenhum = cbs.every(cb => !cb.checked);
   document.getElementById("veiculo-todos").checked = todos;
   document.getElementById("veiculo-todos").indeterminate = !todos && !nenhum;
-  // Se nenhum marcado, volta a marcar todos (sem seleção = todos)
   if (nenhum) {
     cbs.forEach(cb => cb.checked = true);
     document.getElementById("veiculo-todos").checked = true;
@@ -1629,7 +1614,6 @@ function atualizarBotaoVeiculo() {
 function getVeiculosSelecionados() {
   const cbs      = [...document.querySelectorAll(".veiculo-cb")];
   const marcados = cbs.filter(cb => cb.checked).map(cb => cb.value);
-  // Se todos marcados ou nenhum → sem filtro
   if (marcados.length === cbs.length || marcados.length === 0) return null;
   return new Set(marcados);
 }
@@ -1641,7 +1625,7 @@ function popularFiltros() {
   const veiculosUnicos = [...new Set(dadosAbastecimento.map(d => d.veiculo).filter(Boolean))].sort();
 
   veiculosUnicos.forEach(v => {
-    if (veiculosAtuaisEls.has(v)) return; // já existe, não duplica
+    if (veiculosAtuaisEls.has(v)) return;
     const label = document.createElement("label");
     label.style.cssText = "display:flex;align-items:center;gap:8px;padding:8px 14px;cursor:pointer;font-size:13px;color:var(--text)";
     label.innerHTML = `
@@ -1649,7 +1633,6 @@ function popularFiltros() {
         onchange="onVeiculoCbChange()"
         style="accent-color:var(--accent);width:14px;height:14px">
       <span>${v}</span>`;
-    // Hover
     label.addEventListener("mouseenter", () => label.style.background = "rgba(255,255,255,0.04)");
     label.addEventListener("mouseleave", () => label.style.background = "");
     container.appendChild(label);
@@ -1661,7 +1644,7 @@ function popularFiltros() {
 
 function getFiltrosAtuais() {
   return {
-    veiculos:  getVeiculosSelecionados(),   // Set | null (null = todos)
+    veiculos:  getVeiculosSelecionados(),
     tipo:      document.getElementById("filter-tipo").value,
     diaSemana: document.getElementById("filter-diasemana").value,
     dataIni:   document.getElementById("filter-data-ini").value,
@@ -1672,7 +1655,6 @@ function getFiltrosAtuais() {
 function aplicaFiltrosEm(lista, filtros) {
   return lista.filter(d => {
     if (filtros.veiculos && !filtros.veiculos.has(d.veiculo)) return false;
-    // compatibilidade retroativa com filtros.veiculo (string) usados em outros lugares
     if (!filtros.veiculos && filtros.veiculo && d.veiculo !== filtros.veiculo) return false;
     if (filtros.tipo && d.tipo !== filtros.tipo) return false;
     if (filtros.diaSemana !== "" && filtros.diaSemana !== undefined) {
@@ -1691,10 +1673,6 @@ function clearDateFilter() {
   applyFilters();
 }
 
-// Usado pelas abas de relatório (Semana a Semana, Semanal, Alertas), que têm
-// lógica própria de período/comparação. Aplica veículo/tipo/dia-da-semana do
-// topo, mas IGNORA o filtro de data do topo — senão a comparação com a
-// semana/período anterior quebraria ao cortar os dados históricos necessários.
 function getDadosFiltradosSemData() {
   const filtros = getFiltrosAtuais();
   return aplicaFiltrosEm(dadosAbastecimento, { ...filtros, dataIni: "", dataFim: "" });
@@ -1712,10 +1690,8 @@ function applyFilters() {
   renderAbastecimentos(dadosFiltrados);
   renderChartDiaSemana(dadosFiltrados);
   renderDiaSemanaRanking(dadosFiltrados);
-  atualizarAlertas(); // banner do topo: reflete filtro de veículo/tipo também
+  atualizarAlertas();
 
-  // Re-renderiza a aba de relatório atualmente visível, já que ela depende
-  // dos filtros do topo (veículo/tipo/dia da semana) mesmo sem recarregar a página
   if (viewAtual === "frota") renderFrota();
   if (viewAtual === "comparativo") renderComparativo();
   if (viewAtual === "semanas") renderSemanas();
@@ -1725,7 +1701,7 @@ function applyFilters() {
   const periodoBadge = document.getElementById("chart-period");
   if (filtros.dataIni || filtros.dataFim) {
     periodoBadge.textContent = (filtros.dataIni ? formatDataBR(filtros.dataIni) : "início") +
-      " → " + (filtros.dataFim ? formatDataBR(filtros.dataFim) : "hoje");
+      " -> " + (filtros.dataFim ? formatDataBR(filtros.dataFim) : "hoje");
   } else {
     periodoBadge.textContent = "Período completo";
   }
@@ -1742,12 +1718,9 @@ function renderMetricas(lista) {
   document.getElementById("m-litros-total").textContent = fmtNum(litrosTotal, 1) + " L";
   document.getElementById("m-custo-km").textContent = "R$ " + fmtNum(custoKm, 2) + "/km";
 
-  // Sub-labels com contexto extra
   document.getElementById("m-km-total").nextElementSibling.textContent =
-    lista.length > 0 ? `${lista.length} registros no período` : "Sem registros no período";
+    lista.length > 0 ? lista.length + " registros no período" : "Sem registros no período";
 
-  // ── Totais por tipo de combustível ──────────────────────────────────
-  // Classifica cada registro pelo combustível do veículo (via dadosFrota)
   const frotaMap = {};
   dadosFrota.forEach(f => { frotaMap[f.veiculo] = (f.combustivel || "").toUpperCase(); });
 
@@ -1943,15 +1916,13 @@ function renderChartDiaSemana(lista) {
   });
 }
 // ===================== ABASTECIMENTOS POR VEÍCULO (qtd, litros, valor) =====================
-// Considera "abastecimento" todo registro onde LITROS ABASTECIDOS > 0
-// (dias de apenas rodagem sem reabastecer não contam).
 function calcularAbastecimentosPorVeiculo(lista) {
   const porVeiculo = {};
 
   lista.forEach(d => {
     if (!d.veiculo) return;
     const litros = d.litros_abastecidos || 0;
-    if (litros <= 0) return; // só conta dia em que de fato abasteceu
+    if (litros <= 0) return;
 
     if (!porVeiculo[d.veiculo]) {
       porVeiculo[d.veiculo] = { qtd: 0, litros: 0, valor: 0, tipo: d.tipo };
@@ -1978,7 +1949,6 @@ function renderAbastecimentos(lista) {
   const container = document.getElementById("abastecimentos-list");
   if (!container) return;
 
-  // Build full chronological fueling list per vehicle
   const porVeiculo = {};
   lista.forEach(d => {
     if (!d.veiculo) return;
@@ -1993,7 +1963,6 @@ function renderAbastecimentos(lista) {
     });
   });
 
-  // Sort each vehicle's events chronologically
   Object.values(porVeiculo).forEach(v => {
     v.eventos.sort((a, b) => {
       const pa = a.data ? parseDataQualquer(a.data) || new Date(0) : 0;
@@ -2002,7 +1971,6 @@ function renderAbastecimentos(lista) {
     });
   });
 
-  // Map frota data by vehicle name
   const frotaMap = {};
   dadosFrota.forEach(f => { frotaMap[f.veiculo] = f; });
 
@@ -2011,7 +1979,6 @@ function renderAbastecimentos(lista) {
     return;
   }
 
-  // Sort vehicles: most fueling events first
   const veiculos = Object.entries(porVeiculo).sort((a, b) => b[1].eventos.length - a[1].eventos.length);
   const totalAbastecimentos = veiculos.reduce((s, [, v]) => s + v.eventos.length, 0);
 
@@ -2022,7 +1989,6 @@ function renderAbastecimentos(lista) {
     const totalValor  = eventos.reduce((s, e) => s + e.valor,  0);
     const mediaLitros = qtd > 0 ? totalLitros / qtd : 0;
 
-    // ── Intervalos entre abastecimentos ──────────────────────────────
     const intervalos = [];
     for (let i = 1; i < eventos.length; i++) {
       const da = parseDataQualquer(eventos[i-1].data);
@@ -2033,7 +1999,6 @@ function renderAbastecimentos(lista) {
     const mediaIntervalo = intervalos.length > 0
       ? intervalos.reduce((a,b)=>a+b,0) / intervalos.length : null;
 
-    // ── Últimos 3 abastecimentos ──────────────────────────────────────
     const ult3 = eventos.slice(-3);
     const mediaLitrosUlt3  = ult3.reduce((s,e)=>s+e.litros,0) / ult3.length;
     const mediaKmUlt3      = ult3.reduce((s,e)=>s+e.kmRodados,0) / ult3.length;
@@ -2047,17 +2012,13 @@ function renderAbastecimentos(lista) {
     const mediaInterUlt3 = intervalosUlt3.length > 0
       ? intervalosUlt3.reduce((a,b)=>a+b,0) / intervalosUlt3.length : null;
 
-    // ── Previsão do próximo abastecimento ────────────────────────────
-    // Método 1: pela média real dos últimos 3 (soma dos km nos últimos 3 eventos)
     const kmProxPelaMedia = mediaKmUlt3 > 0 ? mediaKmUlt3 : null;
 
-    // Método 2: pelo tanque cheio × km/L de referência da frota
     const frota = frotaMap[veiculo];
     const tanque = frota?.capacidade_tanque || null;
     const kmL    = frota?.km_l || null;
     const kmProxPorTanque = (tanque && kmL) ? tanque * kmL : null;
 
-    // Último evento e data estimada do próximo
     const ultimoEvento = eventos[eventos.length - 1];
     let dataProxEstimada = null;
     if (ultimoEvento?.data && mediaInterUlt3) {
@@ -2066,7 +2027,6 @@ function renderAbastecimentos(lista) {
       dataProxEstimada = ult.toLocaleDateString("pt-BR");
     }
 
-    // ── Build last-3 mini-table ───────────────────────────────────────
     const ult3HTML = ult3.map((e, i) => {
       const gap = i > 0 ? (() => {
         const da = parseDataQualquer(ult3[i-1].data);
@@ -2075,47 +2035,46 @@ function renderAbastecimentos(lista) {
       })() : null;
       return `<div style="display:flex;align-items:center;gap:10px;padding:5px 0;border-bottom:1px solid var(--border);font-size:12px">
         <span style="color:var(--text3);width:16px;text-align:right">${eventos.length - ult3.length + i + 1}º</span>
-        <span style="font-family:var(--font-mono);min-width:78px">${formatDataBR(e.data) || "—"}</span>
+        <span style="font-family:var(--font-mono);min-width:78px">${formatDataBR(e.data) || "-"}</span>
         <span style="color:var(--blue);min-width:58px">${fmtNum(e.litros,2)} L</span>
         <span style="color:var(--green);min-width:68px">${fmtMoeda(e.valor)}</span>
         ${gap !== null ? `<span style="color:var(--text3)">+${gap}d desde ant.</span>` : `<span style="color:var(--text3)">1º abast.</span>`}
       </div>`;
     }).join("");
 
-    // ── Previsão card ─────────────────────────────────────────────────
     const prevHTML = `
       <div style="background:var(--bg3);border-radius:8px;padding:12px;margin-top:12px">
-        <div style="font-size:10px;color:var(--text3);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">⚡ Previsão do Próximo Abastecimento</div>
+        <div style="font-size:10px;color:var(--text3);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">Previsão do Próximo Abastecimento</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
 
           <div style="background:var(--bg2);border-radius:7px;padding:10px;border-left:3px solid var(--accent)">
             <div style="font-size:10px;color:var(--text3);margin-bottom:4px">Pela média dos últimos ${ult3.length} abast.</div>
             <div style="font-family:var(--font-mono);font-size:15px;color:var(--accent)">
-              ${kmProxPelaMedia !== null ? `~ ${fmtNum(kmProxPelaMedia,0)} km` : "Dados insuficientes"}
+              ${kmProxPelaMedia !== null ? "~ " + fmtNum(kmProxPelaMedia,0) + " km" : "Dados insuficientes"}
             </div>
             <div style="font-size:11px;color:var(--text2);margin-top:3px">
               Média de ${fmtNum(mediaLitrosUlt3,1)} L/abast.
-              ${mediaInterUlt3 ? `· ~${fmtNum(mediaInterUlt3,0)}d de intervalo` : ""}
+              ${mediaInterUlt3 ? "· ~" + fmtNum(mediaInterUlt3,0) + "d de intervalo" : ""}
             </div>
-            ${dataProxEstimada ? `<div style="font-size:11px;color:var(--green);margin-top:4px">📅 Estimativa: ${dataProxEstimada}</div>` : ""}
+            ${dataProxEstimada ? `<div style="font-size:11px;color:var(--green);margin-top:4px">Estimativa: ${dataProxEstimada}</div>` : ""}
           </div>
 
           <div style="background:var(--bg2);border-radius:7px;padding:10px;border-left:3px solid var(--blue)">
-            <div style="font-size:10px;color:var(--text3);margin-bottom:4px">Pela referência do veículo (tanque × km/L)</div>
+            <div style="font-size:10px;color:var(--text3);margin-bottom:4px">Pela referência do veículo (tanque x km/L)</div>
             <div style="font-family:var(--font-mono);font-size:15px;color:var(--blue)">
-              ${kmProxPorTanque !== null ? `~ ${fmtNum(kmProxPorTanque,0)} km` : "Sem dados do veículo"}
+              ${kmProxPorTanque !== null ? "~ " + fmtNum(kmProxPorTanque,0) + " km" : "Sem dados do veículo"}
             </div>
             <div style="font-size:11px;color:var(--text2);margin-top:3px">
-              ${tanque ? `Tanque: ${tanque} L` : "Tanque: —"}
-              ${kmL ? ` · ${fmtNum(kmL,1)} km/L ref.` : " · km/L: —"}
+              ${tanque ? "Tanque: " + tanque + " L" : "Tanque: -"}
+              ${kmL ? "· " + fmtNum(kmL,1) + " km/L ref." : "· km/L: -"}
             </div>
             ${(kmProxPelaMedia && kmProxPorTanque) ? (() => {
               const diff = kmProxPelaMedia - kmProxPorTanque;
               const col  = diff < 0 ? "var(--green)" : "var(--red)";
               const txt  = diff < 0
-                ? `${fmtNum(Math.abs(diff),0)} km abaixo da capacidade`
-                : `${fmtNum(diff,0)} km acima da capacidade`;
-              return `<div style="font-size:11px;color:${col};margin-top:4px">△ ${txt}</div>`;
+                ? fmtNum(Math.abs(diff),0) + " km abaixo da capacidade"
+                : fmtNum(diff,0) + " km acima da capacidade";
+              return `<div style="font-size:11px;color:${col};margin-top:4px">[+] ${txt}</div>`;
             })() : ""}
           </div>
 
@@ -2132,7 +2091,7 @@ function renderAbastecimentos(lista) {
           <div style="display:flex;gap:18px;flex-wrap:wrap">
             <div style="text-align:right">
               <div style="font-size:10px;color:var(--text3);text-transform:uppercase">Abastecimentos</div>
-              <div class="rank-val" style="color:var(--accent)">${qtd}×</div>
+              <div class="rank-val" style="color:var(--accent)">${qtd}x</div>
             </div>
             <div style="text-align:right">
               <div style="font-size:10px;color:var(--text3);text-transform:uppercase">Total Litros</div>
@@ -2212,7 +2171,7 @@ function renderRanking(lista) {
 
 // ===================== VEÍCULOS MAIS ATIVOS POR DIA DA SEMANA =====================
 function renderDiaSemanaRanking(lista) {
-  const porDiaVeiculo = {}; // dia -> { veiculo -> km }
+  const porDiaVeiculo = {};
 
   lista.forEach(d => {
     const dia = diaDaSemana(d.data);
@@ -2247,15 +2206,13 @@ function renderDiaSemanaRanking(lista) {
 // ===================== VIEW: FROTA GERAL =====================
 function renderFrota() {
   const tbody = document.querySelector("#tabela-frota tbody");
-  document.getElementById("frota-count").textContent = `${dadosFrota.length} veículos`;
+  document.getElementById("frota-count").textContent = dadosFrota.length + " veículos";
 
   if (dadosFrota.length === 0) {
     tbody.innerHTML = `<tr><td colspan="12" style="text-align:center;color:var(--text3);padding:24px">Nenhum veículo cadastrado</td></tr>`;
     return;
   }
 
-  // Calcula R$/km real médio por veículo a partir do histórico de abastecimento,
-  // para comparar com a eficiência de referência cadastrada.
   const realPorVeiculo = {};
   dadosAbastecimento.forEach(d => {
     if (!d.veiculo) return;
@@ -2269,7 +2226,6 @@ function renderFrota() {
     .map(v => v.custo / v.km);
   const mediaGeral = todasRsKm.length > 0 ? todasRsKm.reduce((a, b) => a + b, 0) / todasRsKm.length : 0;
 
-  // Quantidade de abastecimentos, litros e valor total por veículo (todo o histórico)
   const abastecimentosPorVeiculo = calcularAbastecimentosPorVeiculo(dadosAbastecimento);
   const abastMap = {};
   abastecimentosPorVeiculo.forEach(a => { abastMap[a.veiculo] = a; });
@@ -2289,14 +2245,14 @@ function renderFrota() {
         <td>${v.modelo}</td>
         <td>${v.veiculo}</td>
         <td><span class="veh-type ${tipoClasse(v.tipo)}">${v.tipo}</span></td>
-        <td>${v.ano || "—"}</td>
-        <td style="font-family:var(--font-mono)">${v.km_l ? fmtNum(v.km_l, 1) : "—"}</td>
-        <td>${v.combustivel || "—"}</td>
-        <td style="font-family:var(--font-mono)">${v.capacidade_tanque ? fmtNum(v.capacidade_tanque, 0) : "—"}</td>
+        <td>${v.ano || "-"}</td>
+        <td style="font-family:var(--font-mono)">${v.km_l ? fmtNum(v.km_l, 1) : "-"}</td>
+        <td>${v.combustivel || "-"}</td>
+        <td style="font-family:var(--font-mono)">${v.capacidade_tanque ? fmtNum(v.capacidade_tanque, 0) : "-"}</td>
         <td>${badge}</td>
         <td style="font-family:var(--font-mono);text-align:center">${abast ? abast.qtd : 0}</td>
-        <td style="font-family:var(--font-mono)">${abast ? fmtNum(abast.litros, 1) + " L" : "—"}</td>
-        <td style="font-family:var(--font-mono)">${abast ? fmtMoeda(abast.valor) : "—"}</td>
+        <td style="font-family:var(--font-mono)">${abast ? fmtNum(abast.litros, 1) + " L" : "-"}</td>
+        <td style="font-family:var(--font-mono)">${abast ? fmtMoeda(abast.valor) : "-"}</td>
       </tr>`;
   }).join("");
 }
@@ -2308,7 +2264,7 @@ function popularSelectComparativo() {
 
   const veiculosUnicos = [...new Set(dadosAbastecimento.map(d => d.veiculo).filter(Boolean))].sort();
   const jaTemOpcoes = selA.options.length > 0;
-  if (jaTemOpcoes) return; // não resetar seleção do usuário ao recarregar
+  if (jaTemOpcoes) return;
 
   [selA, selB].forEach((sel, idx) => {
     sel.innerHTML = veiculosUnicos.map(v => `<option value="${v}">${v}</option>`).join("");
@@ -2342,7 +2298,7 @@ function renderComparativo() {
   const filtros = { dataIni, dataFim };
   const infoEl = document.getElementById("cmp-period-info");
   infoEl.textContent = (dataIni || dataFim)
-    ? `Comparando de ${dataIni ? formatDataBR(dataIni) : "início"} até ${dataFim ? formatDataBR(dataFim) : "hoje"}`
+    ? "Comparando de " + (dataIni ? formatDataBR(dataIni) : "início") + " até " + (dataFim ? formatDataBR(dataFim) : "hoje")
     : "Comparando todo o histórico disponível";
 
   const cardsEl = document.getElementById("cmp-cards");
@@ -2438,12 +2394,10 @@ function renderChartComparativo(nomeA, dadosA, nomeB, dadosB) {
   });
 }
 // ===================== VIEW: SEMANA A SEMANA =====================
-// Define semanas de Segunda a Sábado (conforme indicado no subtítulo do HTML)
-
 function getSegundaDaSemana(date) {
   const d = new Date(date);
-  const dia = d.getDay(); // 0=Dom .. 6=Sáb
-  const diff = dia === 0 ? -6 : 1 - dia; // volta até a segunda-feira
+  const dia = d.getDay();
+  const diff = dia === 0 ? -6 : 1 - dia;
   d.setDate(d.getDate() + diff);
   d.setHours(0, 0, 0, 0);
   return d;
@@ -2461,13 +2415,13 @@ function listarSemanasDisponiveis() {
     semanasSet.add(segunda.toISOString().slice(0, 10));
   });
 
-  return [...semanasSet].sort().reverse(); // mais recente primeiro
+  return [...semanasSet].sort().reverse();
 }
 
 function rangeSemana(segundaISO) {
   const ini = parseDataISO(segundaISO);
   const fim = new Date(ini);
-  fim.setDate(ini.getDate() + 5); // segunda + 5 = sábado
+  fim.setDate(ini.getDate() + 5);
   return { ini: ini.toISOString().slice(0, 10), fim: fim.toISOString().slice(0, 10) };
 }
 
@@ -2514,7 +2468,7 @@ function renderSemanas() {
   const { ini: iniAnt, fim: fimAnt } = rangeSemana(segundaAnterior);
 
   document.getElementById("sw-week-label").textContent =
-    `${formatDataBR(iniAtual)} – ${formatDataBR(fimAtual)} vs ${formatDataBR(iniAnt)} – ${formatDataBR(fimAnt)}`;
+    formatDataBR(iniAtual) + " – " + formatDataBR(fimAtual) + " vs " + formatDataBR(iniAnt) + " – " + formatDataBR(fimAnt);
 
   const dadosBase = getDadosFiltradosSemData();
   const dadosAtual = dadosBase.filter(d => d.data >= iniAtual && d.data <= fimAtual);
@@ -2536,7 +2490,7 @@ function diffPercentual(atual, anterior) {
 function setaVariacao(diff, melhorQuandoMenor = false) {
   const positivo = melhorQuandoMenor ? diff < 0 : diff > 0;
   const cor = diff === 0 ? "var(--text3)" : (positivo ? "var(--green)" : "var(--red)");
-  const seta = diff === 0 ? "—" : (diff > 0 ? "▲" : "▼");
+  const seta = diff === 0 ? "-" : (diff > 0 ? "+" : "-");
   return `<span style="color:${cor}">${seta} ${Math.abs(diff).toFixed(1)}%</span>`;
 }
 
@@ -2570,10 +2524,10 @@ function renderSwKpis(atual, anterior) {
 
 function renderSwOverlay(atual, anterior, iniAtualISO, iniAntISO) {
   const porDiaIdx = arr => {
-    const out = new Array(6).fill(0); // seg..sáb = índice 0..5
+    const out = new Array(6).fill(0);
     arr.forEach(d => {
       const dia = diaDaSemana(d.data);
-      const idx = dia === 0 ? 6 : dia - 1; // domingo não entra (seg=0..sáb=5)
+      const idx = dia === 0 ? 6 : dia - 1;
       if (idx >= 0 && idx <= 5) out[idx] += (d.km_rodados || 0);
     });
     return out;
@@ -2730,7 +2684,7 @@ function renderSwTable(atual, anterior) {
     const diffKm = km - kmAnt;
     const diffLitros = litros - litrosAnt;
     const diffRsKm = rsKm - rsKmAnt;
-    const tipo = (atualV[0] || antV[0] || {}).tipo || "—";
+    const tipo = (atualV[0] || antV[0] || {}).tipo || "-";
 
     return `<tr>
       <td>${v}</td>
@@ -2796,7 +2750,6 @@ function renderSemanal() {
 }
 
 function renderChartSemanal(linhas) {
-  // Meta: usa a média geral de km/dia da frota como referência visual
   const mediaGeralKmDia = linhas.length > 0
     ? linhas.reduce((s, l) => s + l.mediaKmDia, 0) / linhas.length
     : 0;
@@ -2835,10 +2788,7 @@ function renderChartSemanal(linhas) {
 }
 
 // ===================== ALERTAS DE CONSUMO FORA DO PADRÃO =====================
-// Calcula desvio do R$/km de cada registro vs a média do próprio veículo.
-// Um registro é "alerta" se o custo por km estiver muito acima do padrão histórico do veículo.
-
-const DESVIO_ALERTA = 0.35; // 35% acima da média do veículo dispara alerta
+const DESVIO_ALERTA = 0.35;
 
 function calcularAlertas() {
   const porVeiculo = {};
@@ -2851,7 +2801,7 @@ function calcularAlertas() {
 
   const alertas = [];
   Object.entries(porVeiculo).forEach(([veiculo, registros]) => {
-    if (registros.length < 3) return; // precisa de histórico mínimo para ter uma média confiável
+    if (registros.length < 3) return;
     const media = registros.reduce((s, r) => s + r.rsKm, 0) / registros.length;
 
     registros.forEach(r => {
@@ -2870,7 +2820,6 @@ function calcularAlertas() {
   });
 
   return alertas.sort((a, b) => {
-    // Ordena do mais recente ao mais antigo
     const da = a.data ? parseDataQualquer(a.data) || new Date(0) : new Date(0);
     const db = b.data ? parseDataQualquer(b.data) || new Date(0) : new Date(0);
     return db - da;
@@ -2920,17 +2869,13 @@ function renderAlertasView() {
               <td><span class="efficiency-badge eff-bad">R$ ${fmtNum(a.rsKm, 2)}</span></td>
               <td style="color:var(--text2)">R$ ${fmtNum(a.media, 2)}</td>
               <td style="color:var(--red)">+${fmtNum(a.desvioPct, 0)}%</td>
-              <td style="color:var(--text2);font-size:12px">${a.obs || "—"}</td>
+              <td style="color:var(--text2);font-size:12px">${a.obs || "-"}</td>
             </tr>`).join("")}
         </tbody>
       </table>
     </div>`;
 }
 // ===================== MODAL DE IMPORTAÇÃO CSV =====================
-// Nota: a fonte principal de dados é o Google Sheets via Apps Script.
-// Este modal serve como importação manual complementar (ex: dados offline)
-// que ficam mesclados na sessão atual até a próxima sincronização.
-
 let arquivoCsvPendente = null;
 
 function openModal() {
@@ -2963,11 +2908,10 @@ function processarArquivo(file) {
     return;
   }
   arquivoCsvPendente = file;
-  document.getElementById("upload-text").textContent = `Arquivo selecionado: ${file.name}`;
+  document.getElementById("upload-text").textContent = "Arquivo selecionado: " + file.name;
   document.getElementById("btn-import").disabled = false;
 }
 
-// Parser simples de CSV (separador vírgula ou ponto-e-vírgula, com aspas)
 function parseCsv(texto) {
   const sep = texto.includes(";") && !texto.split("\n")[0].includes(",") ? ";" : ",";
   const linhas = texto.split(/\r?\n/).filter(l => l.trim() !== "");
@@ -2998,8 +2942,6 @@ function importData() {
         return;
       }
 
-      // Espera o mesmo layout de colunas da seção de abastecimento:
-      // DATA, VEICULO, TIPO, KM_ATUAL, KM_ANTERIOR, KM_RODADOS, LITROS_ABAST, VALOR_FINAL, LITROS_CONSUMIDOS, RS_KM, OBS
       const novosRegistros = linhas.slice(1).map(cols => ({
         data: normalizarDataCsv(cols[0]),
         veiculo: cols[1] || "",
@@ -3027,7 +2969,7 @@ function importData() {
       atualizarStatusBar();
       closeModal();
 
-      alert(`${novosRegistros.length} registro(s) importado(s) com sucesso para esta sessão.`);
+      alert(novosRegistros.length + " registro(s) importado(s) com sucesso para esta sessão.");
 
     } catch (err) {
       console.error(err);
@@ -3041,13 +2983,10 @@ function normalizarDataCsv(valor) {
   if (!valor) return "";
   if (valor.includes("/")) {
     const [d, m, a] = valor.split("/");
-    return `${a.length === 2 ? "20" + a : a}-${m.padStart(2, "0")}-${d.padStart(2, "0")}`;
+    return (a.length === 2 ? "20" + a : a) + "-" + m.padStart(2, "0") + "-" + d.padStart(2, "0");
   }
-  return valor; // já em YYYY-MM-DD
+  return valor;
 }
-
   </script>
-
 </body>
-
 </html>
