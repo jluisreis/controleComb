@@ -849,9 +849,32 @@
         <div class="topbar-title" id="view-title">Dashboard</div>
         <div class="topbar-right">
           <div class="filter-group">
-            <select id="filter-veiculo" onchange="applyFilters()">
-              <option value="">Todos os veículos</option>
-            </select>
+
+            <!-- ── Multi-select de veículos ── -->
+            <div id="veiculo-dropdown" style="position:relative">
+              <button id="veiculo-btn" onclick="toggleVeiculoDropdown(event)"
+                style="background:var(--bg3);border:1px solid var(--border2);color:var(--text);
+                       padding:7px 12px;border-radius:7px;font-family:var(--font-body);font-size:13px;
+                       cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;min-width:160px">
+                <span id="veiculo-btn-label">Todos os veículos</span>
+                <span style="margin-left:auto;opacity:.5;font-size:10px">▼</span>
+              </button>
+              <div id="veiculo-panel"
+                style="display:none;position:absolute;top:calc(100% + 4px);left:0;z-index:999;
+                       background:var(--bg2);border:1px solid var(--border2);border-radius:9px;
+                       min-width:220px;max-height:300px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,.4);padding:6px 0">
+                <!-- "Todos" toggle -->
+                <label style="display:flex;align-items:center;gap:8px;padding:8px 14px;cursor:pointer;
+                              font-size:13px;color:var(--text2);border-bottom:1px solid var(--border)">
+                  <input type="checkbox" id="veiculo-todos" checked onchange="toggleTodosVeiculos(this)"
+                    style="accent-color:var(--accent);width:14px;height:14px">
+                  <span style="font-weight:600">Todos os veículos</span>
+                </label>
+                <!-- Checkboxes individuais (preenchidos via JS) -->
+                <div id="veiculo-checkboxes"></div>
+              </div>
+            </div>
+
             <select id="filter-tipo" onchange="applyFilters()">
               <option value="">Todos os tipos</option>
               <option value="MOTO">Motos</option>
@@ -1280,7 +1303,7 @@ let charts = {}; // referência às instâncias Chart.js para destruir antes de 
 
 // ⚠️  Cole aqui a URL gerada no novo deploy do Apps Script
 // Deploy > New deployment > Web app > Anyone > Deploy > copiar URL
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx5y4xWQMfi2GlFXYKh9G4BKSSaHe0omoK7S-hS7dPjBx-XICeuO66qcpTcIfqBEoM/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyuX8XMyWaW-P6wC5fFE0UKmcXT8xFVt19Vsuape0zFcU0RwCFejnx8s_gbw4Kfpfs/exec";
 
 const CORES_TIPO = {
   "MOTO": "#5b8dee",
@@ -1547,36 +1570,110 @@ function showView(viewName) {
 }
 
 // ===================== FILTROS =====================
+// ── Fechar dropdown ao clicar fora ──────────────────────────────────────
+document.addEventListener("click", function(e) {
+  const panel = document.getElementById("veiculo-panel");
+  const btn   = document.getElementById("veiculo-btn");
+  if (panel && btn && !btn.contains(e.target) && !panel.contains(e.target)) {
+    panel.style.display = "none";
+  }
+});
+
+function toggleVeiculoDropdown(e) {
+  e.stopPropagation();
+  const panel = document.getElementById("veiculo-panel");
+  panel.style.display = panel.style.display === "none" ? "block" : "none";
+}
+
+function toggleTodosVeiculos(checkbox) {
+  // Marcar/desmarcar todos os individuais
+  document.querySelectorAll(".veiculo-cb").forEach(cb => { cb.checked = checkbox.checked; });
+  atualizarBotaoVeiculo();
+  applyFilters();
+}
+
+function onVeiculoCbChange() {
+  // Sincroniza o "Todos" conforme os individuais
+  const cbs   = [...document.querySelectorAll(".veiculo-cb")];
+  const todos = cbs.every(cb => cb.checked);
+  const nenhum = cbs.every(cb => !cb.checked);
+  document.getElementById("veiculo-todos").checked = todos;
+  document.getElementById("veiculo-todos").indeterminate = !todos && !nenhum;
+  // Se nenhum marcado, volta a marcar todos (sem seleção = todos)
+  if (nenhum) {
+    cbs.forEach(cb => cb.checked = true);
+    document.getElementById("veiculo-todos").checked = true;
+    document.getElementById("veiculo-todos").indeterminate = false;
+  }
+  atualizarBotaoVeiculo();
+  applyFilters();
+}
+
+function atualizarBotaoVeiculo() {
+  const cbs       = [...document.querySelectorAll(".veiculo-cb")];
+  const marcados  = cbs.filter(cb => cb.checked);
+  const label     = document.getElementById("veiculo-btn-label");
+  const todos     = marcados.length === cbs.length || marcados.length === 0;
+  if (todos) {
+    label.textContent = "Todos os veículos";
+    label.style.color = "";
+  } else if (marcados.length === 1) {
+    label.textContent = marcados[0].value;
+    label.style.color = "var(--accent)";
+  } else {
+    label.textContent = marcados.length + " veículos";
+    label.style.color = "var(--accent)";
+  }
+}
+
+function getVeiculosSelecionados() {
+  const cbs      = [...document.querySelectorAll(".veiculo-cb")];
+  const marcados = cbs.filter(cb => cb.checked).map(cb => cb.value);
+  // Se todos marcados ou nenhum → sem filtro
+  if (marcados.length === cbs.length || marcados.length === 0) return null;
+  return new Set(marcados);
+}
+
 function popularFiltros() {
-  const selVeiculo = document.getElementById("filter-veiculo");
-  const veiculosAtuais = new Set([...selVeiculo.options].map(o => o.value));
+  const container = document.getElementById("veiculo-checkboxes");
+  const veiculosAtuaisEls = new Set([...container.querySelectorAll(".veiculo-cb")].map(cb => cb.value));
 
   const veiculosUnicos = [...new Set(dadosAbastecimento.map(d => d.veiculo).filter(Boolean))].sort();
+
   veiculosUnicos.forEach(v => {
-    if (!veiculosAtuais.has(v)) {
-      const opt = document.createElement("option");
-      opt.value = v;
-      opt.textContent = v;
-      selVeiculo.appendChild(opt);
-    }
+    if (veiculosAtuaisEls.has(v)) return; // já existe, não duplica
+    const label = document.createElement("label");
+    label.style.cssText = "display:flex;align-items:center;gap:8px;padding:8px 14px;cursor:pointer;font-size:13px;color:var(--text)";
+    label.innerHTML = `
+      <input type="checkbox" class="veiculo-cb" value="${v.replace(/"/g,'&quot;')}" checked
+        onchange="onVeiculoCbChange()"
+        style="accent-color:var(--accent);width:14px;height:14px">
+      <span>${v}</span>`;
+    // Hover
+    label.addEventListener("mouseenter", () => label.style.background = "rgba(255,255,255,0.04)");
+    label.addEventListener("mouseleave", () => label.style.background = "");
+    container.appendChild(label);
   });
 
+  atualizarBotaoVeiculo();
   popularSelectComparativo();
 }
 
 function getFiltrosAtuais() {
   return {
-    veiculo: document.getElementById("filter-veiculo").value,
-    tipo: document.getElementById("filter-tipo").value,
+    veiculos:  getVeiculosSelecionados(),   // Set | null (null = todos)
+    tipo:      document.getElementById("filter-tipo").value,
     diaSemana: document.getElementById("filter-diasemana").value,
-    dataIni: document.getElementById("filter-data-ini").value,
-    dataFim: document.getElementById("filter-data-fim").value
+    dataIni:   document.getElementById("filter-data-ini").value,
+    dataFim:   document.getElementById("filter-data-fim").value
   };
 }
 
 function aplicaFiltrosEm(lista, filtros) {
   return lista.filter(d => {
-    if (filtros.veiculo && d.veiculo !== filtros.veiculo) return false;
+    if (filtros.veiculos && !filtros.veiculos.has(d.veiculo)) return false;
+    // compatibilidade retroativa com filtros.veiculo (string) usados em outros lugares
+    if (!filtros.veiculos && filtros.veiculo && d.veiculo !== filtros.veiculo) return false;
     if (filtros.tipo && d.tipo !== filtros.tipo) return false;
     if (filtros.diaSemana !== "" && filtros.diaSemana !== undefined) {
       const dia = diaDaSemana(d.data);
