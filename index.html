@@ -135,17 +135,20 @@
       justify-content: center;
       flex-shrink: 0;
     }
+
     .nav-icon svg {
       width: 16px;
       height: 16px;
       stroke-width: 1.75;
     }
+
     .upload-icon svg {
       width: 36px;
       height: 36px;
       stroke: var(--text3);
       stroke-width: 1.5;
     }
+
     .icon-sm svg {
       width: 14px;
       height: 14px;
@@ -837,29 +840,64 @@
       <nav class="sidebar-nav">
         <div class="nav-section">Painel</div>
         <div class="nav-item active" onclick="showView('dashboard')">
-          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span> Dashboard
+          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="3" width="7" height="7" rx="1" />
+              <rect x="3" y="14" width="7" height="7" rx="1" />
+              <rect x="14" y="14" width="7" height="7" rx="1" />
+            </svg></span> Dashboard
         </div>
         <div class="nav-item" onclick="showView('frota')">
-          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="2"/><circle cx="12" cy="21" r="1"/><circle cx="20" cy="21" r="1"/></svg></span> Frota Geral
+          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3" />
+              <rect x="9" y="11" width="14" height="10" rx="2" />
+              <circle cx="12" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+            </svg></span> Frota Geral
         </div>
         <div class="nav-item" onclick="showView('comparativo')">
-          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><path d="M11 18H8a2 2 0 0 1-2-2V9"/></svg></span> Comparativo
+          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="18" r="3" />
+              <circle cx="6" cy="6" r="3" />
+              <path d="M13 6h3a2 2 0 0 1 2 2v7" />
+              <path d="M11 18H8a2 2 0 0 1-2-2V9" />
+            </svg></span> Comparativo
         </div>
         <div class="nav-section">Relatórios</div>
         <div class="nav-item" onclick="showView('semanas')">
-          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg></span> Semana a Semana
+          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" />
+            </svg></span> Semana a Semana
         </div>
         <div class="nav-item" onclick="showView('semanal')">
-          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg></span> Semanal
+          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18" />
+              <path d="M18 17V9M13 17V5M8 17v-3" />
+            </svg></span> Semanal
         </div>
         <div class="nav-item" onclick="showView('alertas')">
-          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span> Alertas <span id="alert-count"
+          <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+            </svg></span> Alertas <span id="alert-count"
             style="background:var(--red);color:white;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;">0</span>
         </div>
       </nav>
       <div class="sidebar-footer">
         <button class="import-btn" onclick="openModal()">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="17 8 12 3 7 8" />
+            <line x1="12" y1="3" x2="12" y2="15" />
+          </svg>
           Importar CSV
         </button>
       </div>
@@ -878,7 +916,11 @@
                        padding:7px 12px;border-radius:7px;font-family:var(--font-body);font-size:13px;
                        cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;min-width:160px">
                 <span id="veiculo-btn-label">Todos os veículos</span>
-                <span style="margin-left:auto;opacity:.5;display:flex;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+                <span style="margin-left:auto;opacity:.5;display:flex;align-items:center"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg></span>
               </button>
               <div id="veiculo-panel"
                 style="display:none;position:absolute;top:calc(100% + 4px);left:0;z-index:999;
@@ -923,7 +965,11 @@
               <input type="date" id="filter-data-fim" onchange="applyFilters()"
                 style="border:none;background:transparent;padding:2px 2px;font-size:12px;color:var(--text);width:126px;">
               <button onclick="clearDateFilter()" title="Limpar período"
-                style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:13px;padding:0 2px;opacity:0.7;display:flex;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+                style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:13px;padding:0 2px;opacity:0.7;display:flex;align-items:center"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 6 6 18M6 6l12 12" />
+                </svg></button>
             </div>
           </div>
           <div class="badge-live" id="status-live">Ao vivo</div>
@@ -1119,7 +1165,11 @@
                   <input type="date" id="cmp-data-fim" onchange="renderComparativo()"
                     style="border:none;background:transparent;padding:2px 2px;font-size:13px;color:var(--text);flex:1;">
                   <button onclick="clearCmpDateFilter()" title="Limpar período"
-                    style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:13px;padding:0 2px;opacity:0.7;display:flex;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+                    style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:13px;padding:0 2px;opacity:0.7;display:flex;align-items:center"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 6 6 18M6 6l12 12" />
+                    </svg></button>
                 </div>
                 <div style="display:flex;gap:6px;flex-wrap:wrap">
                   <button onclick="setCmpPeriod(3)"
@@ -1219,8 +1269,14 @@
             <div class="card-header">
               <div class="card-title">Comparativo por Veículo — Seg a Sáb</div>
               <span style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:6px">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg> melhorou
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg> piorou
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                  stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m18 15-6-6-6 6" />
+                </svg> melhorou
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                  stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m6 9 6 6 6-6" />
+                </svg> piorou
               </span>
             </div>
             <table class="vehicle-table" id="sw-table">
@@ -1307,7 +1363,13 @@
       <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()"
         ondragover="event.preventDefault();this.classList.add('drag')" ondragleave="this.classList.remove('drag')"
         ondrop="handleDrop(event)">
-        <div class="upload-icon" style="display:flex;justify-content:center;margin-bottom:12px"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text3)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/><path d="M12 10v6m-3-3 3-3 3 3"/></svg></div>
+        <div class="upload-icon" style="display:flex;justify-content:center;margin-bottom:12px"><svg
+            xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+            stroke="var(--text3)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" />
+            <path d="M12 10v6m-3-3 3-3 3 3" />
+          </svg></div>
         <div class="upload-text" id="upload-text">Clique ou arraste o arquivo CSV aqui</div>
         <div class="upload-hint">Formato: mesma estrutura da planilha base</div>
       </div>
@@ -1423,24 +1485,35 @@
         }
 
         if (!response.ok) {
-          throw new Error("Servidor retornou HTTP ${response.status} (${response.statusText}). Verifique se a implantação do Apps Script está ativa.");
+          throw new Error(`Servidor retornou HTTP ${response.status} (${response.statusText}). Verifique se a implantação do Apps Script está ativa.`);
         }
 
         const textoRaw = await response.text();
+
+        // ── Diagnóstico: mostra os primeiros 500 chars da resposta no console ──
+        console.log("📡 Resposta do Apps Script (primeiros 500 chars):", textoRaw.slice(0, 500));
 
         let data;
         try {
           data = JSON.parse(textoRaw);
         } catch (parseErr) {
-          const snippet = textoRaw.slice(0, 120).replace(/</g, "&lt;");
+          const snippet = textoRaw.slice(0, 200).replace(/</g, "&lt;");
           if (textoRaw.includes("signin") || textoRaw.includes("accounts.google")) {
             throw new Error("O Apps Script exigiu login. Reimplante o script como 'Qualquer pessoa, mesmo anônimos'.");
           }
           if (textoRaw.includes("Script function not found") || textoRaw.includes("doGet")) {
             throw new Error("Função doGet() não encontrada no Apps Script. Verifique o código do script.");
           }
-          throw new Error("Resposta inválida (não é JSON). Início da resposta: " + snippet);
+          throw new Error("Resposta inválida (não é JSON):\n" + snippet);
         }
+
+        // ── Log da estrutura recebida ──────────────────────────────────────────
+        console.log("✅ JSON recebido:", {
+          frota: Array.isArray(data.frota) ? `${data.frota.length} itens` : data.frota,
+          abastecimentos: Array.isArray(data.abastecimentos) ? `${data.abastecimentos.length} itens` : data.abastecimentos,
+          erro: data.error, msg: data.message,
+          chaves: Object.keys(data)
+        });
 
         if (data && (data.error === true || data.ok === false)) {
           const msg = data.message || data.error || "Erro desconhecido no Apps Script";
@@ -1457,6 +1530,36 @@
 
         if (dadosFrota.length === 0 && dadosAbastecimento.length === 0) {
           setLiveStatus("empty");
+
+          // Mostra diagnóstico detalhado no banner
+          const container = document.getElementById("alert-container");
+          if (container) {
+            container.innerHTML = `
+              <div class="alert-banner" style="flex-direction:column;align-items:flex-start;gap:8px">
+                <div style="display:flex;align-items:center;gap:10px;width:100%">
+                  <span class="alert-badge" style="background:var(--accent);color:#000">SEM DADOS</span>
+                  <strong style="color:var(--accent)">O Apps Script conectou mas não retornou dados</strong>
+                  <button onclick="carregarDadosDoGSheets()"
+                    style="margin-left:auto;background:var(--accent);color:#0d0f14;border:none;
+                           border-radius:6px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer">
+                    ↺ Tentar novamente
+                  </button>
+                </div>
+                <div style="font-size:12px;color:var(--text2);line-height:1.8">
+                  O JSON chegou mas <code>frota</code> e <code>abastecimentos</code> vieram vazios. Verifique:<br>
+                  <b>1)</b> O nome das abas na planilha bate com o script?
+                    Atual: <code style="color:var(--accent)">SHEET_FROTA = "${data._sheetFrota || 'Dados frota'}"</code>
+                    e <code style="color:var(--accent)">SHEET_ABASTECIMENTO = "${data._sheetAbast || 'CONTROLE COMB.'}"</code><br>
+                  <b>2)</b> A aba de abastecimento tem o cabeçalho <code>DATA</code> na primeira coluna?<br>
+                  <b>3)</b> A aba de frota tem o cabeçalho <code>PLACA</code> na primeira coluna?<br>
+                  <b>4)</b> Adicione <code>?refresh=1</code> no final da URL do Apps Script e abra no navegador para ver o JSON bruto.
+                </div>
+                <div style="font-size:11px;color:var(--text3)">
+                  URL: <code style="font-size:10px">${APPS_SCRIPT_URL.slice(0, 80)}…</code>
+                  — abra no navegador para inspecionar a resposta
+                </div>
+              </div>`;
+          }
         } else {
           setLiveStatus("ok");
         }
@@ -1984,7 +2087,8 @@
           data: d.data,
           litros,
           valor: d.valor_final || 0,
-          kmRodados: d.km_rodados || 0
+          kmRodados: d.km_rodados || 0,
+          kmAtual: d.km_atual || 0
         });
       });
 
@@ -2058,12 +2162,29 @@
             const db = parseDataQualquer(e.data);
             return Math.round((db - da) / 86400000);
           })() : null;
-          return `<div style="display:flex;align-items:center;gap:10px;padding:5px 0;border-bottom:1px solid var(--border);font-size:12px">
+
+          // KM no hodômetro no dia do abastecimento e diferença do abastecimento anterior
+          const kmAtualStr = e.kmAtual > 0 ? fmtKm(e.kmAtual) : "—";
+          const kmAntEvt = i > 0 ? ult3[i - 1].kmAtual : null;
+          const diffKm = (kmAntEvt && e.kmAtual > 0 && kmAntEvt > 0) ? e.kmAtual - kmAntEvt : null;
+          const diffKmStr = diffKm !== null
+            ? `<span style="color:${diffKm >= 0 ? "var(--green)" : "var(--red)"};font-family:var(--font-mono)">
+                ${diffKm >= 0 ? "+" : ""}${fmtKm(diffKm)} km
+               </span>`
+            : "";
+
+          return `<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border);font-size:12px;flex-wrap:wrap">
         <span style="color:var(--text3);width:16px;text-align:right">${eventos.length - ult3.length + i + 1}º</span>
-        <span style="font-family:var(--font-mono);min-width:78px">${formatDataBR(e.data) || "-"}</span>
+        <span style="font-family:var(--font-mono);min-width:78px">${formatDataBR(e.data) || "—"}</span>
         <span style="color:var(--blue);min-width:58px">${fmtNum(e.litros, 2)} L</span>
-        <span style="color:var(--green);min-width:68px">${fmtMoeda(e.valor)}</span>
-        ${gap !== null ? `<span style="color:var(--text3)">+${gap}d desde ant.</span>` : `<span style="color:var(--text3)">1º abast.</span>`}
+        <span style="color:var(--green);min-width:72px">${fmtMoeda(e.valor)}</span>
+        <span style="color:var(--text2);min-width:88px" title="KM no hodômetro">
+          <span style="font-size:10px;color:var(--text3)">hodôm. </span>${kmAtualStr}
+        </span>
+        ${diffKmStr ? `<span title="Diferença de KM desde o último abastecimento">${diffKmStr}</span>` : ""}
+        ${gap !== null
+              ? `<span style="color:var(--text3);margin-left:auto">+${gap}d</span>`
+              : `<span style="color:var(--text3);margin-left:auto">1º abast.</span>`}
       </div>`;
         }).join("");
 
@@ -2419,13 +2540,22 @@
       });
     }
     // ===================== VIEW: SEMANA A SEMANA =====================
-    function getSegundaDaSemana(date) {
-      const d = new Date(date);
-      const dia = d.getDay();
-      const diff = dia === 0 ? -6 : 1 - dia;
-      d.setDate(d.getDate() + diff);
-      d.setHours(0, 0, 0, 0);
-      return d;
+    // ─── data helpers: sempre trabalha em YYYY-MM-DD strings, sem UTC ──────
+    function addDias(isoStr, n) {
+      const [y, m, d] = isoStr.split("-").map(Number);
+      const dt = new Date(y, m - 1, d + n);
+      return dt.getFullYear() + "-" +
+        String(dt.getMonth() + 1).padStart(2, "0") + "-" +
+        String(dt.getDate()).padStart(2, "0");
+    }
+
+    function getSegundaDaSemana(isoStr) {
+      // Recebe "yyyy-mm-dd", devolve "yyyy-mm-dd" da segunda-feira da mesma semana
+      const [y, m, d] = isoStr.split("-").map(Number);
+      const dt = new Date(y, m - 1, d);
+      const dia = dt.getDay();                   // 0=Dom, 1=Seg ... 6=Sáb
+      const diff = dia === 0 ? -6 : 1 - dia;    // dias até segunda
+      return addDias(isoStr, diff);
     }
 
     function listarSemanasDisponiveis() {
@@ -2434,26 +2564,20 @@
 
       const semanasSet = new Set();
       datas.forEach(dt => {
-        const dataObj = parseDataISO(dt);
-        if (!dataObj) return;
-        const segunda = getSegundaDaSemana(dataObj);
-        semanasSet.add(segunda.toISOString().slice(0, 10));
+        if (!dt) return;
+        semanasSet.add(getSegundaDaSemana(dt));
       });
 
       return [...semanasSet].sort().reverse();
     }
 
     function rangeSemana(segundaISO) {
-      const ini = parseDataISO(segundaISO);
-      const fim = new Date(ini);
-      fim.setDate(ini.getDate() + 5);
-      return { ini: ini.toISOString().slice(0, 10), fim: fim.toISOString().slice(0, 10) };
+      // Seg → Sáb (+5 dias)
+      return { ini: segundaISO, fim: addDias(segundaISO, 5) };
     }
 
     function semanaAnterior(segundaISO) {
-      const ini = parseDataISO(segundaISO);
-      ini.setDate(ini.getDate() - 7);
-      return ini.toISOString().slice(0, 10);
+      return addDias(segundaISO, -7);
     }
 
     let semanaSelecionadaAtual = null;
@@ -2813,37 +2937,54 @@
     }
 
     // ===================== ALERTAS DE CONSUMO FORA DO PADRÃO =====================
-    const DESVIO_ALERTA = 0.35;
+    // Limiar: quantas vezes o desvio-padrão acima da média dispara alerta
+    const DESVIO_SIGMA = 1.5;
 
     function calcularAlertas() {
+      // Agrupa km_rodados por veículo (só linhas com km > 0)
       const porVeiculo = {};
       getDadosFiltradosSemData().forEach(d => {
-        if (!d.veiculo || !d.km_rodados) return;
+        if (!d.veiculo || !(d.km_rodados > 0)) return;
         if (!porVeiculo[d.veiculo]) porVeiculo[d.veiculo] = [];
-        const rsKm = d.km_rodados > 0 ? d.valor_final / d.km_rodados : 0;
-        porVeiculo[d.veiculo].push({ ...d, rsKm });
+        porVeiculo[d.veiculo].push({ ...d });
       });
 
       const alertas = [];
       Object.entries(porVeiculo).forEach(([veiculo, registros]) => {
-        if (registros.length < 3) return;
-        const media = registros.reduce((s, r) => s + r.rsKm, 0) / registros.length;
+        if (registros.length < 3) return;          // precisa de histórico mínimo
+
+        const kms = registros.map(r => r.km_rodados);
+        const media = kms.reduce((a, b) => a + b, 0) / kms.length;
+        const sigma = Math.sqrt(kms.reduce((s, v) => s + Math.pow(v - media, 2), 0) / kms.length);
+
+        // Limites: 1.5 σ acima ou abaixo da média
+        const limSup = media + DESVIO_SIGMA * sigma;
+        const limInf = Math.max(0, media - DESVIO_SIGMA * sigma);
 
         registros.forEach(r => {
-          if (media > 0 && r.rsKm > media * (1 + DESVIO_ALERTA)) {
-            alertas.push({
-              veiculo,
-              tipo: r.tipo,
-              data: r.data,
-              rsKm: r.rsKm,
-              media,
-              desvioPct: ((r.rsKm - media) / media) * 100,
-              obs: r.obs
-            });
-          }
+          const acima = r.km_rodados > limSup;
+          const abaixo = sigma > 0 && r.km_rodados < limInf && r.km_rodados > 0;
+          if (!acima && !abaixo) return;
+
+          alertas.push({
+            veiculo,
+            tipo: r.tipo,
+            data: r.data,
+            km_rodados: r.km_rodados,
+            km_atual: r.km_atual,
+            media: media,
+            sigma: sigma,
+            limSup: limSup,
+            limInf: limInf,
+            desvio: r.km_rodados - media,
+            desviopct: media > 0 ? ((r.km_rodados - media) / media) * 100 : 0,
+            direcao: acima ? "acima" : "abaixo",
+            obs: r.obs
+          });
         });
       });
 
+      // Mais recente primeiro
       return alertas.sort((a, b) => {
         const da = a.data ? parseDataQualquer(a.data) || new Date(0) : new Date(0);
         const db = b.data ? parseDataQualquer(b.data) || new Date(0) : new Date(0);
@@ -2853,19 +2994,25 @@
 
     function atualizarAlertas() {
       const alertas = calcularAlertas();
-      document.getElementById("alert-count").textContent = alertas.length;
+      const badge = document.getElementById("alert-count");
+      if (badge) badge.textContent = alertas.length;
 
       const container = document.getElementById("alert-container");
-      if (alertas.length === 0) {
-        container.innerHTML = "";
-        return;
-      }
+      if (!container) return;
+      if (alertas.length === 0) { container.innerHTML = ""; return; }
 
+      const acima = alertas.filter(a => a.direcao === "acima").length;
+      const abaixo = alertas.filter(a => a.direcao === "abaixo").length;
       container.innerHTML = `
-    <div class="alert-banner">
-      <span class="alert-badge">ATENÇÃO</span>
-      <span>${alertas.length} registro(s) com custo por km muito acima do padrão histórico do veículo. Veja a aba <strong>Alertas</strong> para detalhes.</span>
-    </div>`;
+        <div class="alert-banner">
+          <span class="alert-badge">ATENÇÃO</span>
+          <span>
+            ${alertas.length} registro(s) com KM rodado fora do padrão histórico do veículo
+            ${acima ? `<span style="color:var(--red);margin-left:6px">▲ ${acima} acima</span>` : ""}
+            ${abaixo ? `<span style="color:var(--accent);margin-left:6px">▼ ${abaixo} abaixo</span>` : ""}
+            — veja a aba <strong>Alertas</strong>.
+          </span>
+        </div>`;
     }
 
     function renderAlertasView() {
@@ -2873,32 +3020,106 @@
       const container = document.getElementById("alertas-lista");
 
       if (alertas.length === 0) {
-        container.innerHTML = `<div style="color:var(--text3);text-align:center;padding:40px;">Nenhum alerta no momento. Todos os veículos estão dentro do padrão histórico de consumo.</div>`;
+        container.innerHTML = `
+          <div style="text-align:center;padding:48px 0;color:var(--text3)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
+              stroke-linejoin="round" style="opacity:.35;margin-bottom:12px">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <div style="font-size:14px;margin-top:4px">Nenhum alerta — todos os veículos estão dentro do padrão histórico de KM.</div>
+          </div>`;
         return;
       }
 
-      container.innerHTML = `
-    <div class="card" style="overflow-x:auto">
-      <table class="vehicle-table">
-        <thead>
-          <tr>
-            <th>Veículo</th><th>Tipo</th><th>Data</th><th>R$/km</th><th>Média do Veículo</th><th>Desvio</th><th>Observação</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${alertas.map(a => `
-            <tr>
-              <td>${a.veiculo}</td>
-              <td><span class="veh-type ${tipoClasse(a.tipo)}">${a.tipo}</span></td>
-              <td>${formatDataBR(a.data)}</td>
-              <td><span class="efficiency-badge eff-bad">R$ ${fmtNum(a.rsKm, 2)}</span></td>
-              <td style="color:var(--text2)">R$ ${fmtNum(a.media, 2)}</td>
-              <td style="color:var(--red)">+${fmtNum(a.desvioPct, 0)}%</td>
-              <td style="color:var(--text2);font-size:12px">${a.obs || "-"}</td>
-            </tr>`).join("")}
-        </tbody>
-      </table>
-    </div>`;
+      // Agrupa alertas por veículo para exibir o contexto de média/sigma
+      const porVeiculo = {};
+      alertas.forEach(a => {
+        if (!porVeiculo[a.veiculo]) porVeiculo[a.veiculo] = { tipo: a.tipo, media: a.media, sigma: a.sigma, limSup: a.limSup, limInf: a.limInf, itens: [] };
+        porVeiculo[a.veiculo].itens.push(a);
+      });
+
+      container.innerHTML = Object.entries(porVeiculo).map(([veiculo, g]) => {
+        const tc = tipoClasse(g.tipo);
+        const rows = g.itens.map(a => {
+          const cor = a.direcao === "acima" ? "var(--red)" : "var(--accent)";
+          const seta = a.direcao === "acima"
+            ? `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="${cor}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>`
+            : `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="${cor}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>`;
+          const sinal = a.desvio > 0 ? "+" : "";
+          return `<tr>
+          <td style="font-family:var(--font-mono);font-size:12px">${formatDataBR(a.data)}</td>
+          <td style="font-family:var(--font-mono);font-size:13px;font-weight:600">${fmtKm(a.km_rodados)}</td>
+          <td style="font-family:var(--font-mono);font-size:12px;color:var(--text2)">${fmtKm(g.media)}</td>
+          <td>
+            <span style="display:inline-flex;align-items:center;gap:3px;font-family:var(--font-mono);font-size:12px;color:${cor};font-weight:600">
+                ${seta} ${sinal}${fmtKm(a.desvio)} (${a.desvio > 0 ? "+" : ""}${fmtNum(a.desviopct, 0)}%)
+              </span>
+            </td>
+            <td style="font-size:11px;color:var(--text3)">${a.obs || "—"}</td>
+            </tr>`;
+        }).join("");
+
+        // Mini sparkline: barra por linha mostrando quanto cada km está vs média
+        const barras = g.itens.map(a => {
+          const max = g.limSup * 1.1 || 1;
+          const pct = Math.min(100, (a.km_rodados / max) * 100);
+          const cor = a.direcao === "acima" ? "#f05454" : "#f5a623";
+          return `<div title="${fmtKm(a.km_rodados)} em ${formatDataBR(a.data)}"
+            style="height:24px;width:${pct.toFixed(1)}%;background:${cor};border-radius:3px;margin-bottom:2px;
+                   min-width:4px;display:flex;align-items:center;padding-left:6px">
+            <span style="font-size:10px;color:rgba(0,0,0,.7);white-space:nowrap">${fmtKm(a.km_rodados)}</span>
+          </div>`;
+        }).join("");
+
+        return `
+          <div class="card" style="margin-bottom:16px;border-left:3px solid var(--red)">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+              <div style="display:flex;align-items:center;gap:10px">
+                <span class="veh-type ${tc}">${g.tipo}</span>
+                <span style="font-family:var(--font-display);font-size:15px;font-weight:700">${veiculo}</span>
+                <span style="background:rgba(240,84,84,.12);color:var(--red);font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px">${g.itens.length} alerta${g.itens.length > 1 ? "s" : ""}</span>
+              </div>
+              <div style="display:flex;gap:18px">
+                <div style="text-align:right">
+                  <div style="font-size:10px;color:var(--text3);text-transform:uppercase">Média histórica</div>
+                  <div style="font-family:var(--font-mono);font-size:13px">${fmtKm(g.media)}/dia</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-size:10px;color:var(--text3);text-transform:uppercase">Desvio-padrão</div>
+                  <div style="font-family:var(--font-mono);font-size:13px">± ${fmtKm(g.sigma)}</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-size:10px;color:var(--text3);text-transform:uppercase">Faixa normal</div>
+                  <div style="font-family:var(--font-mono);font-size:13px">${fmtKm(g.limInf)} – ${fmtKm(g.limSup)}</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Barras visuais -->
+            <div style="margin-bottom:14px;padding:10px;background:var(--bg3);border-radius:8px">
+              <div style="font-size:10px;color:var(--text3);text-transform:uppercase;margin-bottom:8px">KM rodado nos dias em alerta</div>
+              <!-- linha de média -->
+              <div style="position:relative;margin-bottom:6px">
+                <div style="position:absolute;left:${Math.min(99, (g.media / (g.limSup * 1.1) * 100)).toFixed(1)}%;top:-3px;bottom:-3px;
+                  width:2px;background:rgba(255,255,255,.25);border-radius:1px"></div>
+                ${barras}
+              </div>
+              <div style="font-size:10px;color:var(--text3);margin-top:4px">Linha branca = média (${fmtKm(g.media)})</div>
+            </div>
+
+            <!-- Tabela de ocorrências -->
+            <div style="overflow-x:auto">
+              <table class="vehicle-table" style="font-size:12px">
+                <thead><tr>
+                  <th>Data</th><th>KM rodado</th><th>Média</th><th>Desvio</th><th>Obs.</th>
+                </tr></thead>
+                <tbody>${rows}</tbody>
+              </table>
+            </div>
+          </div>`;
+      }).join("");
     }
     // ===================== MODAL DE IMPORTAÇÃO CSV =====================
     let arquivoCsvPendente = null;
